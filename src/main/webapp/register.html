@@ -1,0 +1,498 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PetHUB | Online Shopping website</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link
+	href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+	rel="stylesheet">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.navbar {
+	display: flex;
+	align-items: center;
+	padding: 20px;
+}
+
+nav {
+	flex: 1;
+	text-align: right;
+}
+
+nav ul {
+	display: inline-block;
+	list-style-type: none;
+}
+
+nav ul li {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: #555;
+}
+
+nav ul li p {
+	color: #555;
+}
+
+.container {
+	max-width: 1300px;
+	margin: auto;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.col-2 {
+	flex-basis: 50%;
+	min-width: 300px;
+}
+
+.col-2 img {
+	max-width: 100%;
+	padding: 50px 0;
+}
+
+.col-2 h1 {
+	font-size: 40px;
+	line-height: 60px;
+	margin: 25px 0;
+}
+
+.btn {
+	display: inline-block;
+	background: #ff523b;
+	color: #fff;
+	padding: 8px 30px;
+	margin: 30px 0;
+	border-radius: 30px;
+	text-decoration: none;
+}
+
+.header {
+	/*   background: radial-gradient(#fff,#ffd2d2);*/
+	
+}
+
+.header .row {
+	margin-top: 60px;
+}
+
+.categories {
+	margin: 40px 0;
+}
+
+.categories .col-3 {
+	flex-basis: 30%;
+	min-width: 250px;
+	margin-bottom: 0px;
+	text-align: center;
+	padding: 40px 10px;
+	/*    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);*/
+	cursor: pointer;
+	transition: transform 0.5s;
+}
+
+.categories .col-3 img {
+	width: 150px;
+	height: 150px;
+	margin-top: 20px;
+	border-radius: 50%;
+}
+
+.categories .col-3:hover {
+	transform: translateY(-10px);
+}
+
+.small-container {
+	max-width: 1080px;
+	margin: auto;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.col-4 {
+	flex-basis: 25%;
+	padding: 10px;
+	min-width: 200px;
+	margin-bottom: 50px;
+	transition: transform 0.5s;
+}
+
+.col-4 img {
+	width: 100%;
+}
+
+.title {
+	text-align: center;
+	margin: 0 auto 80px;
+	position: relative;
+	line-height: 60px;
+	color: #555;
+}
+
+.title::after {
+	content: '';
+	background: orangered;
+	width: 80px;
+	height: 5px;
+	border-radius: 5px;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+h4 {
+	color: #555;
+	font-weight: normal;
+}
+
+.col-4 p {
+	font-size: 14px;
+}
+
+.rating .fa {
+	color: #ff523b;
+}
+
+.col-4:hover {
+	transform: translateY(-5px);
+}
+/*offer*/
+.offer {
+	background: radial-gradient(#fff, #ffd2d2);
+	margin-top: 80px;
+	padding: 30px 0;
+}
+
+.col-2 .offer-img {
+	padding: 50px;
+}
+
+small {
+	color: #555;
+}
+/*testimonial*/
+.testimonial {
+	padding-top: 40px;
+}
+
+.testimonial .col-4 {
+	text-align: center;
+	padding: 40px 20px;
+	box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	transition: transform 0.5s;
+}
+
+.testimonial .col-4 img {
+	width: 80px;
+	height: 60px;
+	margin-top: 20px;
+	border-radius: 50%;
+}
+
+.testimonial .col-4:hover {
+	transform: translateY(-10px);
+}
+
+.testimonial .fa.fa-quote-left {
+	font-size: 34px;
+	color: #ff523b;
+}
+
+.testimonial .col-4 p {
+	font-size: 12px;
+	margin: 12px 0;
+	color: #777;
+}
+
+.testimonial .col-4 h3 {
+	font-weight: 600;
+	color: #555;
+	font-size: 16px;
+}
+/*brands*/
+.brands {
+	margin-top: 100px auto;
+}
+
+.col-5 {
+	widows: 160px;
+}
+
+.col-5 img {
+	widows: 100%;
+	cursor: pointer;
+	filter: grayscale(100%);
+}
+
+.col-5 img:hover {
+	filter: grayscale(0);
+}
+/*footer*/
+.footer {
+	background: #000;
+	color: #8a8a8a;
+	font-size: 14px;
+	padding: 60px 0 20px;
+}
+
+.footer p {
+	color: #8a8a8a;
+}
+
+.footer h3 {
+	color: #fff;
+	margin-bottom: 20px;
+}
+
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4 {
+	min-width: 250px;
+	margin-bottom: 20px;
+}
+
+.footer-col-1 {
+	flex-basis: 30%;
+}
+
+.footer-col-2 {
+	flex: 1;
+	text-align: center;
+}
+
+.footer-col-2 {
+	width: 160px;
+	margin-bottom: 30px;
+}
+
+.footer-col-3, .footer-col-4 {
+	flex-basis: 12%;
+	text-align: center;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.app-logo {
+	margin-top: 20px;
+}
+
+.app-logo img {
+	width: 140px;
+}
+
+.footer hr {
+	border: none;
+	background: #b5b5b5;
+	height: 1px;
+	margin: 20px 0;
+}
+
+.copyright {
+	text-align: center;
+}
+
+body {
+	background-image: url("image/regbg.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: 'Poppins', sans-serif;
+}
+
+.wrapp {
+	max-width: 350px;
+	border-radius: 20px;
+	margin: auto;
+	
+	background: rgba(0, 0, 0, 0.8);
+	box-sizing: border-box;
+	padding: 40px;
+	color:#fff;
+	top:50%;
+	left:50%;
+	
+	float: center;
+}
+
+h1 {
+	text-align: center;
+}
+
+input[type=text], input[type=password], input[type=number] {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 12px 5px;
+	background: rgba(0, 0, 0, 0.10);
+	outline: none;
+	border: none;
+	border-bottom: 3px double #fff;
+	color: #fff;
+	border-radius: 5px;
+	margin: 5px;
+	font-weight: bold;
+}
+
+input[type=submit] {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10px 0;
+	margin-top: 30px;
+	outline: none;
+	border: none;
+	background: #60adde;
+	opacity: 0.7;
+	border-radius: 20px;
+	font-size: 20px;
+	color: #fff;
+}
+
+messages {
+	colour: red;
+}
+
+.error {
+	color: red;
+}
+</style>
+
+
+
+
+
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+<script>
+	jQuery.validator
+			.addMethod(
+					"email",
+					function(value, element) {
+						return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+								.test(value)
+								|| /^[0-9]{10}$/.test(value);
+					});
+	jQuery(document).ready(function($) {
+		$("#signup").validate({
+			ignore : [],
+			rules : {
+				name : {
+					required : true,
+				},
+				email : {
+					required : true,
+					email : true
+				},
+				phone : {
+					required : true,
+					minlength : 10,
+					maxlength : 10
+				},
+				pw : {
+					required : true,
+					minlength : 6
+				},
+				cp : {
+					required : true,
+					minlength : 6,
+					equalTo : "#pw"
+				}
+			},
+
+			messages : {
+				name : {
+					required : "please enter the name.",
+
+				},
+				email : {
+					required : "Please enter the email.",
+					email : "Please enter valid email id"
+				},
+				phone : {
+					required : "Please enter the number.",
+					minlength : "Please enter the number greater than 10.",
+					maxlength : "Please enter the number less than 10."
+				},
+				pw : {
+					required : "Please enter the password.",
+					minlength : "Please enter the password greater than 6.",
+				},
+				cp : {
+					required : "Please reenter the password.",
+					minlength : "Please enter the password greater than 6.",
+					equalTo : "mismatch password"
+				}
+			}
+		});
+	});
+</script>
+
+
+
+
+</head>
+<body>
+
+
+	<div class="header">
+
+		<div class="container">
+			<div class="navbar">
+				<div class="logo">
+					<img src="image/pethub1.png" width="125px">
+				</div>
+				<nav>
+					<ul>
+						<li><a href="userhome.jsp">Home</a></li>
+						<li><a href="login.html">Login</a></li>
+
+						<!--                    <li><a href="register.html">Account</a> </li>-->
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="wrapp">
+		<h1>SIGN UP</h1>
+		<form id="signup" action="register" method="POST">
+			<input type="text" name="name" placeholder="Name" required> <input
+				type="number" name="phone" placeholder=" Phone Number" required>
+			<input type="text" name="email" placeholder=" Email"> <input
+				type="password" name="pw" id="pw" placeholder=" Password"> <input
+				type="password" name="cp" placeholder="Re-enter password" required>
+			<input type="submit" name="submit" value="Register">
+		</form>
+	</div>
+
+
+
+	<!--footer-->
+
+
+
+</body>
+</html>
